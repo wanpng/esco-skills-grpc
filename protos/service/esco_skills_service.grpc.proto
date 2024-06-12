@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package protos.service;
+
+option go_package = "github.com/wanpng/esco-skills-grpc/grpc/service";
+
+import "protos/domain/skill.grpc.proto";
+
+message GetJobseekerSkillsRequest {
+    string jobseeker_id = 1;
+}
+
+message GetJobseekerSkillsResponse {
+    repeated protos.domain.Skill skills = 1;
+}
+
+service EscoSkillsService {
+    rpc GetJobseekerSkills(GetJobseekerSkillsRequest) returns (GetJobseekerSkillsResponse);
+}

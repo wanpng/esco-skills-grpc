@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package protos.domain;
+
+option go_package = "github.com/wanpng/esco-skills-grpc/grpc/domain";
+
+message Skill {
+    string job_seeker_skill_id = 1;
+    string job_seeker_id = 2;
+    string concept_uri = 3;
+    string skill_id = 4;
+    string skill = 5;
+    int32 level_id = 6;
+    string level = 7;
+}
